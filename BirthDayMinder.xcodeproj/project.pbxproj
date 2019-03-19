@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AF32FDBC22401E06003DFFF2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDBB22401E06003DFFF2 /* AppDelegate.swift */; };
+		AF32FDBE22401E06003DFFF2 /* BirthdayListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDBD22401E06003DFFF2 /* BirthdayListVC.swift */; };
+		AF32FDC122401E06003DFFF2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32FDBF22401E06003DFFF2 /* Main.storyboard */; };
+		AF32FDC422401E06003DFFF2 /* BirthDayMinder.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDC222401E06003DFFF2 /* BirthDayMinder.xcdatamodeld */; };
+		AF32FDC622401E0A003DFFF2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF32FDC522401E0A003DFFF2 /* Assets.xcassets */; };
+		AF32FDC922401E0A003DFFF2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF32FDC722401E0A003DFFF2 /* LaunchScreen.storyboard */; };
+		AF32FDD422401E0A003DFFF2 /* BirthDayMinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDD322401E0A003DFFF2 /* BirthDayMinderTests.swift */; };
+		AF32FDE322403A64003DFFF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE222403A64003DFFF2 /* Constants.swift */; };
+		AF32FDE622403C7E003DFFF2 /* BirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE522403C7E003DFFF2 /* BirthdayCell.swift */; };
+		AF32FDE822403E8F003DFFF2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE722403E8F003DFFF2 /* Person.swift */; };
+		AF32FDEA22404260003DFFF2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE922404260003DFFF2 /* CoreDataManager.swift */; };
+		AF32FDEC22406336003DFFF2 /* AddPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AF32FDD022401E0A003DFFF2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AF32FDB022401E06003DFFF2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AF32FDB722401E06003DFFF2;
+			remoteInfo = BirthDayMinder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AF32FDB822401E06003DFFF2 /* BirthDayMinder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BirthDayMinder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF32FDBB22401E06003DFFF2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		AF32FDBD22401E06003DFFF2 /* BirthdayListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayListVC.swift; sourceTree = "<group>"; };
+		AF32FDC022401E06003DFFF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		AF32FDC322401E06003DFFF2 /* BirthDayMinder.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BirthDayMinder.xcdatamodel; sourceTree = "<group>"; };
+		AF32FDC522401E0A003DFFF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		AF32FDC822401E0A003DFFF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		AF32FDCA22401E0A003DFFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF32FDCF22401E0A003DFFF2 /* BirthDayMinderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BirthDayMinderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF32FDD322401E0A003DFFF2 /* BirthDayMinderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthDayMinderTests.swift; sourceTree = "<group>"; };
+		AF32FDD522401E0A003DFFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF32FDE222403A64003DFFF2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		AF32FDE522403C7E003DFFF2 /* BirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCell.swift; sourceTree = "<group>"; };
+		AF32FDE722403E8F003DFFF2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		AF32FDE922404260003DFFF2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AF32FDB522401E06003DFFF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF32FDCC22401E0A003DFFF2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AF32FDAF22401E06003DFFF2 = {
+			isa = PBXGroup;
+			children = (
+				AF32FDBA22401E06003DFFF2 /* BirthDayMinder */,
+				AF32FDD222401E0A003DFFF2 /* BirthDayMinderTests */,
+				AF32FDB922401E06003DFFF2 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AF32FDB922401E06003DFFF2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AF32FDB822401E06003DFFF2 /* BirthDayMinder.app */,
+				AF32FDCF22401E0A003DFFF2 /* BirthDayMinderTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AF32FDBA22401E06003DFFF2 /* BirthDayMinder */ = {
+			isa = PBXGroup;
+			children = (
+				AF32FDE122403A58003DFFF2 /* Constants */,
+				AF32FDDE22401FAB003DFFF2 /* Model */,
+				AF32FDDF22401FB0003DFFF2 /* View */,
+				AF32FDE022401FBC003DFFF2 /* Controller */,
+				AF32FDCA22401E0A003DFFF2 /* Info.plist */,
+				AF32FDC522401E0A003DFFF2 /* Assets.xcassets */,
+			);
+			path = BirthDayMinder;
+			sourceTree = "<group>";
+		};
+		AF32FDD222401E0A003DFFF2 /* BirthDayMinderTests */ = {
+			isa = PBXGroup;
+			children = (
+				AF32FDD322401E0A003DFFF2 /* BirthDayMinderTests.swift */,
+				AF32FDD522401E0A003DFFF2 /* Info.plist */,
+			);
+			path = BirthDayMinderTests;
+			sourceTree = "<group>";
+		};
+		AF32FDDE22401FAB003DFFF2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AF32FDBB22401E06003DFFF2 /* AppDelegate.swift */,
+				AF32FDC222401E06003DFFF2 /* BirthDayMinder.xcdatamodeld */,
+				AF32FDE722403E8F003DFFF2 /* Person.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		AF32FDDF22401FB0003DFFF2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AF32FDBF22401E06003DFFF2 /* Main.storyboard */,
+				AF32FDC722401E0A003DFFF2 /* LaunchScreen.storyboard */,
+				AF32FDE522403C7E003DFFF2 /* BirthdayCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AF32FDE022401FBC003DFFF2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AF32FDBD22401E06003DFFF2 /* BirthdayListVC.swift */,
+				AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		AF32FDE122403A58003DFFF2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				AF32FDE222403A64003DFFF2 /* Constants.swift */,
+				AF32FDE922404260003DFFF2 /* CoreDataManager.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AF32FDB722401E06003DFFF2 /* BirthDayMinder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF32FDD822401E0A003DFFF2 /* Build configuration list for PBXNativeTarget "BirthDayMinder" */;
+			buildPhases = (
+				AF32FDB422401E06003DFFF2 /* Sources */,
+				AF32FDB522401E06003DFFF2 /* Frameworks */,
+				AF32FDB622401E06003DFFF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BirthDayMinder;
+			productName = BirthDayMinder;
+			productReference = AF32FDB822401E06003DFFF2 /* BirthDayMinder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AF32FDCE22401E0A003DFFF2 /* BirthDayMinderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AF32FDDB22401E0A003DFFF2 /* Build configuration list for PBXNativeTarget "BirthDayMinderTests" */;
+			buildPhases = (
+				AF32FDCB22401E0A003DFFF2 /* Sources */,
+				AF32FDCC22401E0A003DFFF2 /* Frameworks */,
+				AF32FDCD22401E0A003DFFF2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AF32FDD122401E0A003DFFF2 /* PBXTargetDependency */,
+			);
+			name = BirthDayMinderTests;
+			productName = BirthDayMinderTests;
+			productReference = AF32FDCF22401E0A003DFFF2 /* BirthDayMinderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AF32FDB022401E06003DFFF2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Holland Clarke";
+				TargetAttributes = {
+					AF32FDB722401E06003DFFF2 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					AF32FDCE22401E0A003DFFF2 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = AF32FDB722401E06003DFFF2;
+					};
+				};
+			};
+			buildConfigurationList = AF32FDB322401E06003DFFF2 /* Build configuration list for PBXProject "BirthDayMinder" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AF32FDAF22401E06003DFFF2;
+			productRefGroup = AF32FDB922401E06003DFFF2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AF32FDB722401E06003DFFF2 /* BirthDayMinder */,
+				AF32FDCE22401E0A003DFFF2 /* BirthDayMinderTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AF32FDB622401E06003DFFF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF32FDC922401E0A003DFFF2 /* LaunchScreen.storyboard in Resources */,
+				AF32FDC622401E0A003DFFF2 /* Assets.xcassets in Resources */,
+				AF32FDC122401E06003DFFF2 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF32FDCD22401E0A003DFFF2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AF32FDB422401E06003DFFF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF32FDE822403E8F003DFFF2 /* Person.swift in Sources */,
+				AF32FDBE22401E06003DFFF2 /* BirthdayListVC.swift in Sources */,
+				AF32FDE322403A64003DFFF2 /* Constants.swift in Sources */,
+				AF32FDBC22401E06003DFFF2 /* AppDelegate.swift in Sources */,
+				AF32FDC422401E06003DFFF2 /* BirthDayMinder.xcdatamodeld in Sources */,
+				AF32FDEC22406336003DFFF2 /* AddPersonVC.swift in Sources */,
+				AF32FDEA22404260003DFFF2 /* CoreDataManager.swift in Sources */,
+				AF32FDE622403C7E003DFFF2 /* BirthdayCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AF32FDCB22401E0A003DFFF2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AF32FDD422401E0A003DFFF2 /* BirthDayMinderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AF32FDD122401E0A003DFFF2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AF32FDB722401E06003DFFF2 /* BirthDayMinder */;
+			targetProxy = AF32FDD022401E0A003DFFF2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		AF32FDBF22401E06003DFFF2 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF32FDC022401E06003DFFF2 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		AF32FDC722401E0A003DFFF2 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AF32FDC822401E0A003DFFF2 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		AF32FDD622401E0A003DFFF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AF32FDD722401E0A003DFFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AF32FDD922401E0A003DFFF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9FS5ZF328E;
+				INFOPLIST_FILE = BirthDayMinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.clarkecodes.BirthDayMinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AF32FDDA22401E0A003DFFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9FS5ZF328E;
+				INFOPLIST_FILE = BirthDayMinder/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.clarkecodes.BirthDayMinder;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AF32FDDC22401E0A003DFFF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9FS5ZF328E;
+				INFOPLIST_FILE = BirthDayMinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.clarkecodes.BirthDayMinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BirthDayMinder.app/BirthDayMinder";
+			};
+			name = Debug;
+		};
+		AF32FDDD22401E0A003DFFF2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9FS5ZF328E;
+				INFOPLIST_FILE = BirthDayMinderTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.clarkecodes.BirthDayMinderTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BirthDayMinder.app/BirthDayMinder";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AF32FDB322401E06003DFFF2 /* Build configuration list for PBXProject "BirthDayMinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF32FDD622401E0A003DFFF2 /* Debug */,
+				AF32FDD722401E0A003DFFF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF32FDD822401E0A003DFFF2 /* Build configuration list for PBXNativeTarget "BirthDayMinder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF32FDD922401E0A003DFFF2 /* Debug */,
+				AF32FDDA22401E0A003DFFF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AF32FDDB22401E0A003DFFF2 /* Build configuration list for PBXNativeTarget "BirthDayMinderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AF32FDDC22401E0A003DFFF2 /* Debug */,
+				AF32FDDD22401E0A003DFFF2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		AF32FDC222401E06003DFFF2 /* BirthDayMinder.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AF32FDC322401E06003DFFF2 /* BirthDayMinder.xcdatamodel */,
+			);
+			currentVersion = AF32FDC322401E06003DFFF2 /* BirthDayMinder.xcdatamodel */;
+			path = BirthDayMinder.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = AF32FDB022401E06003DFFF2 /* Project object */;
+}
