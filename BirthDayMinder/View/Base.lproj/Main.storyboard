@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ry8-eQ-sL7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mWt-dq-0O9">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,87 +11,78 @@
     </dependencies>
     <scenes>
         <!--Birthday List-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="hPL-BN-msD">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="BirthdayListVC" customModule="BirthDayMinder" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="9zv-Tx-CWR" customClass="BirthdayListVC" customModule="BirthDayMinder" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9ms-5W-uhp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pmu-Iv-pbA">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayCell" rowHeight="102" id="Os4-z3-OVH" customClass="BirthdayCell" customModule="BirthDayMinder" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="102"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Os4-z3-OVH" id="Xze-4A-EGu">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gxA-N7-Gno">
-                                                    <rect key="frame" x="10" y="18.5" width="65" height="65"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="65" id="uaO-cN-Y8y"/>
-                                                        <constraint firstAttribute="width" constant="65" id="zfQ-c9-K7w"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holland Clarke" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31D-ET-fOF">
-                                                    <rect key="frame" x="75" y="18.5" width="285" height="24"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turns 21 in : 20 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFa-OU-sdn">
-                                                    <rect key="frame" x="75" y="59.5" width="285" height="24"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="birthdayCell" rowHeight="102" id="Os4-z3-OVH" customClass="BirthdayCell" customModule="BirthDayMinder" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="102"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Os4-z3-OVH" id="Xze-4A-EGu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="101.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gxA-N7-Gno">
+                                            <rect key="frame" x="10" y="18.5" width="65" height="65"/>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="31D-ET-fOF" secondAttribute="trailing" id="5QQ-2E-MzK"/>
-                                                <constraint firstItem="31D-ET-fOF" firstAttribute="top" secondItem="gxA-N7-Gno" secondAttribute="top" id="Cr7-hz-gCn"/>
-                                                <constraint firstItem="gxA-N7-Gno" firstAttribute="leading" secondItem="Xze-4A-EGu" secondAttribute="leading" constant="10" id="FAd-rU-Mfg"/>
-                                                <constraint firstItem="dFa-OU-sdn" firstAttribute="trailing" secondItem="Xze-4A-EGu" secondAttribute="trailingMargin" id="KeJ-fw-TQj"/>
-                                                <constraint firstItem="31D-ET-fOF" firstAttribute="leading" secondItem="gxA-N7-Gno" secondAttribute="trailing" id="NIX-Xi-hxA"/>
-                                                <constraint firstItem="dFa-OU-sdn" firstAttribute="leading" secondItem="gxA-N7-Gno" secondAttribute="trailing" id="Ulh-yK-d9v"/>
-                                                <constraint firstItem="gxA-N7-Gno" firstAttribute="centerY" secondItem="Xze-4A-EGu" secondAttribute="centerY" id="mNZ-aH-T56"/>
-                                                <constraint firstItem="dFa-OU-sdn" firstAttribute="bottom" secondItem="gxA-N7-Gno" secondAttribute="bottom" id="wuz-68-fbd"/>
+                                                <constraint firstAttribute="height" constant="65" id="uaO-cN-Y8y"/>
+                                                <constraint firstAttribute="width" constant="65" id="zfQ-c9-K7w"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="personImage" destination="gxA-N7-Gno" id="aX5-xY-aLj"/>
-                                            <outlet property="personNameLbl" destination="31D-ET-fOF" id="wk1-j6-LF0"/>
-                                            <outlet property="upcomingBirthdayLbl" destination="dFa-OU-sdn" id="9X0-ur-bBM"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="pmu-Iv-pbA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="9la-lm-cm2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="pmu-Iv-pbA" secondAttribute="trailing" id="HiR-Ek-oxc"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="pmu-Iv-pbA" secondAttribute="bottom" id="P5t-gJ-Snp"/>
-                            <constraint firstItem="pmu-Iv-pbA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ipB-FL-sUE"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Birthday List" id="Kf9-Nh-J6p">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bir-jQ-iNe">
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Holland Clarke" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31D-ET-fOF">
+                                            <rect key="frame" x="75" y="18.5" width="284" height="24"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turns 21 in : 20 days" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFa-OU-sdn">
+                                            <rect key="frame" x="75" y="59.5" width="284" height="24"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="31D-ET-fOF" secondAttribute="trailing" id="5QQ-2E-MzK"/>
+                                        <constraint firstItem="31D-ET-fOF" firstAttribute="top" secondItem="gxA-N7-Gno" secondAttribute="top" id="Cr7-hz-gCn"/>
+                                        <constraint firstItem="gxA-N7-Gno" firstAttribute="leading" secondItem="Xze-4A-EGu" secondAttribute="leading" constant="10" id="FAd-rU-Mfg"/>
+                                        <constraint firstItem="dFa-OU-sdn" firstAttribute="trailing" secondItem="Xze-4A-EGu" secondAttribute="trailingMargin" id="KeJ-fw-TQj"/>
+                                        <constraint firstItem="31D-ET-fOF" firstAttribute="leading" secondItem="gxA-N7-Gno" secondAttribute="trailing" id="NIX-Xi-hxA"/>
+                                        <constraint firstItem="dFa-OU-sdn" firstAttribute="leading" secondItem="gxA-N7-Gno" secondAttribute="trailing" id="Ulh-yK-d9v"/>
+                                        <constraint firstItem="gxA-N7-Gno" firstAttribute="centerY" secondItem="Xze-4A-EGu" secondAttribute="centerY" id="mNZ-aH-T56"/>
+                                        <constraint firstItem="dFa-OU-sdn" firstAttribute="bottom" secondItem="gxA-N7-Gno" secondAttribute="bottom" id="wuz-68-fbd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="personImage" destination="gxA-N7-Gno" id="aX5-xY-aLj"/>
+                                    <outlet property="personNameLbl" destination="31D-ET-fOF" id="wk1-j6-LF0"/>
+                                    <outlet property="upcomingBirthdayLbl" destination="dFa-OU-sdn" id="9X0-ur-bBM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9zv-Tx-CWR" id="Xxl-GU-fO4"/>
+                            <outlet property="delegate" destination="9zv-Tx-CWR" id="at5-Tn-oAB"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Birthday List" id="Vw4-ie-P4B">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="kwM-4q-M65">
                             <connections>
-                                <segue destination="LeC-sJ-NT9" kind="show" identifier="showPersonData" id="Dcf-pr-tIc"/>
+                                <action selector="addBtnPressed:" destination="9zv-Tx-CWR" id="uIE-PG-qtR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="birthdayTableView" destination="pmu-Iv-pbA" id="Id8-Wo-Igo"/>
+                        <outlet property="birthdayTableView" destination="9ms-5W-uhp" id="Ush-Q5-mYI"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NJE-lW-PwN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="617" y="770"/>
+            <point key="canvasLocation" x="2226.4000000000001" y="769.56521739130437"/>
         </scene>
         <!--Add PersonVC-->
         <scene sceneID="R46-jF-LEz">
@@ -102,7 +93,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YC9-yY-XJO">
-                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="M1r-Z5-iJu"/>
                                 </constraints>
@@ -111,7 +102,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bKv-cx-Vws">
-                                <rect key="frame" x="15" y="129" width="345" height="40"/>
+                                <rect key="frame" x="15" y="85" width="345" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gxV-hN-7qU"/>
                                 </constraints>
@@ -123,7 +114,7 @@
                                 </connections>
                             </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RdU-T5-RWP">
-                                <rect key="frame" x="137.5" y="194" width="100" height="100"/>
+                                <rect key="frame" x="137.5" y="150" width="100" height="100"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="H8d-KJ-zcP"/>
@@ -131,7 +122,7 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kZC-Hn-ov6">
-                                <rect key="frame" x="101.5" y="319" width="172" height="40"/>
+                                <rect key="frame" x="101.5" y="275" width="172" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="OpV-5Q-UVd"/>
                                 </constraints>
@@ -205,25 +196,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpt-mq-hFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2050" y="770"/>
+            <point key="canvasLocation" x="2988" y="769.56521739130437"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="Wrv-pq-4os">
+        <scene sceneID="dyK-Sw-fug">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ry8-eQ-sL7" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mWt-dq-0O9" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mdg-IZ-AOX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="RhK-be-tIv">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="5ZR-Fc-UBo"/>
+                        <segue destination="9zv-Tx-CWR" kind="relationship" relationship="rootViewController" id="bZB-7V-6jn"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="br0-0l-wMA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xbt-aO-WdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-207" y="770"/>
+            <point key="canvasLocation" x="1285.5999999999999" y="769.56521739130437"/>
         </scene>
     </scenes>
 </document>

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Photos
+import CloudKit
 
 class AddPersonVC: UIViewController {
 
@@ -75,17 +75,8 @@ class AddPersonVC: UIViewController {
     
     @IBAction func doneBtnPressed(_ sender: UIButton) {
         
-        guard let rootVC = navigationController?.viewControllers.first as? BirthdayListVC else {
-            fatalError("No view controller found at the bottom of the navigation controller stack")
-        }
         let temp = Person(name: nameTextField.text!, image: personImage.image, birthday: birthdayDatePicker.date)
         
-        if let index = indexToEdit {
-            rootVC.persons[index] = temp
-        } else {
-            rootVC.persons.append(temp)
-        }
-        rootVC.birthdayTableView.reloadData()
         
         navigationController?.popViewController(animated: true)
 

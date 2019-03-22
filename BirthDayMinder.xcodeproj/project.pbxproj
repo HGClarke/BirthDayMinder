@@ -19,6 +19,7 @@
 		AF32FDE822403E8F003DFFF2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE722403E8F003DFFF2 /* Person.swift */; };
 		AF32FDEA22404260003DFFF2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE922404260003DFFF2 /* CoreDataManager.swift */; };
 		AF32FDEC22406336003DFFF2 /* AddPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */; };
+		AF4A954322436F1500C5EDA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4A954222436F1500C5EDA0 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,8 @@
 		AF32FDE722403E8F003DFFF2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		AF32FDE922404260003DFFF2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonVC.swift; sourceTree = "<group>"; };
+		AF4A954222436F1500C5EDA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		AF8B33492241FE1A00C4986E /* BirthDayMinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BirthDayMinder.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF4A954322436F1500C5EDA0 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +78,7 @@
 				AF32FDBA22401E06003DFFF2 /* BirthDayMinder */,
 				AF32FDD222401E0A003DFFF2 /* BirthDayMinderTests */,
 				AF32FDB922401E06003DFFF2 /* Products */,
+				AF4A954122436F1500C5EDA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +94,7 @@
 		AF32FDBA22401E06003DFFF2 /* BirthDayMinder */ = {
 			isa = PBXGroup;
 			children = (
+				AF8B33492241FE1A00C4986E /* BirthDayMinder.entitlements */,
 				AF32FDE122403A58003DFFF2 /* Constants */,
 				AF32FDDE22401FAB003DFFF2 /* Model */,
 				AF32FDDF22401FB0003DFFF2 /* View */,
@@ -146,6 +152,14 @@
 			path = Constants;
 			sourceTree = "<group>";
 		};
+		AF4A954122436F1500C5EDA0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF4A954222436F1500C5EDA0 /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -196,6 +210,14 @@
 				TargetAttributes = {
 					AF32FDB722401E06003DFFF2 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					AF32FDCE22401E0A003DFFF2 = {
 						CreatedOnToolsVersion = 10.1;
@@ -416,6 +438,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BirthDayMinder/BirthDayMinder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FS5ZF328E;
 				INFOPLIST_FILE = BirthDayMinder/Info.plist;
@@ -434,6 +457,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BirthDayMinder/BirthDayMinder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9FS5ZF328E;
 				INFOPLIST_FILE = BirthDayMinder/Info.plist;
