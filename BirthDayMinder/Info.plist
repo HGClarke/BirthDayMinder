@@ -28,6 +28,10 @@
 	<string>wants to acces photos</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>BirthdayMinder would liek to access your photos</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

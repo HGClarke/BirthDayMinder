@@ -8,13 +8,8 @@
 
 import UIKit
 
-struct Person {
-    let name: String
-    let image: UIImage?
-    let birthday: Date
-}
-
 struct BirthdayData {
     let daysLeft: Int
     let upcomingAge: Int
+    let isBirthdayToday: Bool
 }

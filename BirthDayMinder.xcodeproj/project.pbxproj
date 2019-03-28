@@ -16,8 +16,7 @@
 		AF32FDD422401E0A003DFFF2 /* BirthDayMinderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDD322401E0A003DFFF2 /* BirthDayMinderTests.swift */; };
 		AF32FDE322403A64003DFFF2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE222403A64003DFFF2 /* Constants.swift */; };
 		AF32FDE622403C7E003DFFF2 /* BirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE522403C7E003DFFF2 /* BirthdayCell.swift */; };
-		AF32FDE822403E8F003DFFF2 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE722403E8F003DFFF2 /* Person.swift */; };
-		AF32FDEA22404260003DFFF2 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE922404260003DFFF2 /* CoreDataManager.swift */; };
+		AF32FDE822403E8F003DFFF2 /* BirthdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE722403E8F003DFFF2 /* BirthdayData.swift */; };
 		AF32FDEC22406336003DFFF2 /* AddPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */; };
 		AF4A954322436F1500C5EDA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4A954222436F1500C5EDA0 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
@@ -46,8 +45,7 @@
 		AF32FDD522401E0A003DFFF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF32FDE222403A64003DFFF2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AF32FDE522403C7E003DFFF2 /* BirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCell.swift; sourceTree = "<group>"; };
-		AF32FDE722403E8F003DFFF2 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
-		AF32FDE922404260003DFFF2 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		AF32FDE722403E8F003DFFF2 /* BirthdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayData.swift; sourceTree = "<group>"; };
 		AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonVC.swift; sourceTree = "<group>"; };
 		AF4A954222436F1500C5EDA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AF8B33492241FE1A00C4986E /* BirthDayMinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BirthDayMinder.entitlements; sourceTree = "<group>"; };
@@ -119,7 +117,7 @@
 			children = (
 				AF32FDBB22401E06003DFFF2 /* AppDelegate.swift */,
 				AF32FDC222401E06003DFFF2 /* BirthDayMinder.xcdatamodeld */,
-				AF32FDE722403E8F003DFFF2 /* Person.swift */,
+				AF32FDE722403E8F003DFFF2 /* BirthdayData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -147,7 +145,6 @@
 			isa = PBXGroup;
 			children = (
 				AF32FDE222403A64003DFFF2 /* Constants.swift */,
-				AF32FDE922404260003DFFF2 /* CoreDataManager.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -211,6 +208,9 @@
 					AF32FDB722401E06003DFFF2 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -269,13 +269,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF32FDE822403E8F003DFFF2 /* Person.swift in Sources */,
+				AF32FDE822403E8F003DFFF2 /* BirthdayData.swift in Sources */,
 				AF32FDBE22401E06003DFFF2 /* BirthdayListVC.swift in Sources */,
 				AF32FDE322403A64003DFFF2 /* Constants.swift in Sources */,
 				AF32FDBC22401E06003DFFF2 /* AppDelegate.swift in Sources */,
 				AF32FDC422401E06003DFFF2 /* BirthDayMinder.xcdatamodeld in Sources */,
 				AF32FDEC22406336003DFFF2 /* AddPersonVC.swift in Sources */,
-				AF32FDEA22404260003DFFF2 /* CoreDataManager.swift in Sources */,
 				AF32FDE622403C7E003DFFF2 /* BirthdayCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
