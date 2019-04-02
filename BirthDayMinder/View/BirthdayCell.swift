@@ -12,5 +12,6 @@ class BirthdayCell : UITableViewCell {
     @IBOutlet var personImage: UIImageView!
     @IBOutlet var upcomingBirthdayLbl: UILabel!
     @IBOutlet var personNameLbl: UILabel!
+    @IBOutlet var daysLeftNumberLbl: UILabel!
     
 }

@@ -29,7 +29,6 @@ class BirthdayListVC: UITableViewController {
         super.viewDidLoad()
         birthdayTableView.delegate = self
         birthdayTableView.dataSource = self
-        birthdayTableView.separatorStyle = .none
     }
     
     // MARK: - Created Functions
@@ -98,10 +97,11 @@ class BirthdayListVC: UITableViewController {
         
         if data.isBirthdayToday {
             text = "Turns \(data.upcomingAge - 1) Today"
+        
         } else if data.daysLeft == 1 {
-            text = "Turns \(data.upcomingAge) Tomorrow"
+            text = "Turning \(data.upcomingAge) Tomorrow"
         } else {
-            text = "Turns \(data.upcomingAge) in \(data.daysLeft) days"
+            text = "Turning \(data.upcomingAge) in \(data.daysLeft) days"
         }
         return text
     }
@@ -135,13 +135,14 @@ extension BirthdayListVC  {
         guard let cell = birthdayTableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? BirthdayCell else {
             fatalError("The dequeued cell is not an instance of Birthday Cell")
         }
+        cell.accessoryType = .disclosureIndicator
         let person = persons[indexPath.row]
         cell.personNameLbl.text = person.name
-        cell.backgroundColor = Colors.colorsArray[indexPath.row % 4]
+        cell.personNameLbl.adjustsFontSizeToFitWidth = true
         let birthdayData = timeUntilNextBirthday(from: person.birthday!)
         let daysLeft = birthdayData.daysLeft
         var text = ""
-        
+        cell.personImage.image = UIImage(data: person.image!)
         // Sets the text based on when the person's birthday is
         // If daysLeft == 0 then their birthday is today
         // if days left == 1 then their birthday is tomorrow
@@ -149,10 +150,14 @@ extension BirthdayListVC  {
         let birthYear = Calendar.current.dateComponents([.year], from: person.birthday!).year!
         let currentYear = Calendar.current.dateComponents([.year], from: Date()).year!
         
+        // If person is born in the current year their upcoming age is 1
+        // Configure the text of the upcoming age label otherwise
         if currentYear == birthYear {
             text = "Turns 1 in \(daysLeft) days"
+            cell.daysLeftNumberLbl.text = "0"
         } else {
             text = configureCellText(from: birthdayData)
+            cell.daysLeftNumberLbl.text = String(daysLeft)
         }
         
         cell.upcomingBirthdayLbl.text = text

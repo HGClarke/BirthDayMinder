@@ -51,7 +51,7 @@ class AddPersonVC: UIViewController {
         if let person = specificPerson {
             nameTextField.text = "\(person.name!)"
             birthdayDatePicker.date = person.birthday ?? Date()
-//            personImage.image = person.image
+            personImage.image = UIImage(data: person.image!)
         }
     }
     
@@ -132,6 +132,11 @@ class AddPersonVC: UIViewController {
             person.name = nameTextField.text ?? ""
             person.birthday = birthdayDatePicker.date
             person.identifier = specificPerson?.identifier
+            let image = personImage.image
+            if image != UIImage(named: "default") {
+                let imageData = image?.jpegData(compressionQuality: 1)
+                person.image = imageData
+            }
             specificPerson = person
             modifiyNotificationRequest(for: person)
         } else {
@@ -139,6 +144,11 @@ class AddPersonVC: UIViewController {
             newPerson.birthday = birthdayDatePicker.date
             newPerson.name = nameTextField.text!
             newPerson.identifier = UUID().uuidString
+            let image = personImage.image
+            if image != UIImage(named: "default") {
+                let imageData = image?.jpegData(compressionQuality: 1)
+                newPerson.image = imageData
+            }
             context.insert(newPerson)
             saveItems()
             createNotificationRequest(for: newPerson)

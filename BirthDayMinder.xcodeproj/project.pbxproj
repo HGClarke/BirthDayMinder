@@ -18,7 +18,6 @@
 		AF32FDE622403C7E003DFFF2 /* BirthdayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE522403C7E003DFFF2 /* BirthdayCell.swift */; };
 		AF32FDE822403E8F003DFFF2 /* BirthdayData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDE722403E8F003DFFF2 /* BirthdayData.swift */; };
 		AF32FDEC22406336003DFFF2 /* AddPersonVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */; };
-		AF4A954322436F1500C5EDA0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4A954222436F1500C5EDA0 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +46,6 @@
 		AF32FDE522403C7E003DFFF2 /* BirthdayCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayCell.swift; sourceTree = "<group>"; };
 		AF32FDE722403E8F003DFFF2 /* BirthdayData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdayData.swift; sourceTree = "<group>"; };
 		AF32FDEB22406335003DFFF2 /* AddPersonVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPersonVC.swift; sourceTree = "<group>"; };
-		AF4A954222436F1500C5EDA0 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		AF8B33492241FE1A00C4986E /* BirthDayMinder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BirthDayMinder.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF4A954322436F1500C5EDA0 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +149,6 @@
 		AF4A954122436F1500C5EDA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AF4A954222436F1500C5EDA0 /* CloudKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -207,6 +203,7 @@
 				TargetAttributes = {
 					AF32FDB722401E06003DFFF2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -215,12 +212,13 @@
 								enabled = 1;
 							};
 							com.apple.iCloud = {
-								enabled = 1;
+								enabled = 0;
 							};
 						};
 					};
 					AF32FDCE22401E0A003DFFF2 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 						TestTargetID = AF32FDB722401E06003DFFF2;
 					};
 				};
@@ -447,7 +445,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.clarkecodes.BirthDayMinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -466,7 +464,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.clarkecodes.BirthDayMinder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -486,7 +484,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.clarkecodes.BirthDayMinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BirthDayMinder.app/BirthDayMinder";
 			};
@@ -507,7 +505,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.clarkecodes.BirthDayMinderTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BirthDayMinder.app/BirthDayMinder";
 			};
