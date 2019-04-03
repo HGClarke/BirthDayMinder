@@ -23,13 +23,8 @@ class AddPersonVC: UIViewController {
     var indexPathToEdit : IndexPath?
     let imagePickerController = UIImagePickerController()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    // MARK: - View Life Cycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
     
+    // MARK: - View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupDatePicker()
@@ -40,6 +35,7 @@ class AddPersonVC: UIViewController {
         imagePickerController.sourceType = .photoLibrary
         imagePickerController.allowsEditing = true
     }
+    
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
@@ -98,17 +94,50 @@ class AddPersonVC: UIViewController {
         }
     }
     
+    // Create a new person object and add it to Core Data
+    private func createNewPerson() {
+        let newPerson = Person(context: context)
+        newPerson.birthday = birthdayDatePicker.date
+        newPerson.name = nameTextField.text!
+        newPerson.identifier = UUID().uuidString
+        let image = personImage.image
+        newPerson.image = image?.jpegData(compressionQuality: 1)
+        context.insert(newPerson)
+        createNotificationRequest(for: newPerson)
+    }
+    
+    // Modify the person if a person was passed through the segue
+    private func modifySpecificPerson() {
+        
+        if let  person = specificPerson {
+            person.name = nameTextField.text ?? ""
+            person.birthday = birthdayDatePicker.date
+            person.identifier = specificPerson?.identifier
+            let image = personImage.image
+            let imageData = image?.jpegData(compressionQuality: 1)
+            person.image = imageData
+            specificPerson = person
+            modifiyNotificationRequest(for: person)
+            
+        }
+
+    }
+    
+    // Modify the notification request with the new data for the person
     private func modifiyNotificationRequest(for person: Person) {
         let notificationCenter = UNUserNotificationCenter.current()
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [person.identifier!])
         createNotificationRequest(for: person)
     }
     
-    func saveItems() {
-        do {
-            try context.save()
-        } catch {
-            print("Could not save data")
+    // Save any changes
+    private func saveItems() {
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                print("Could not save data")
+            }
         }
     }
     
@@ -128,31 +157,14 @@ class AddPersonVC: UIViewController {
     
     @IBAction func doneBtnPressed(_ sender: UIButton) {
 
-        if let _ = indexPathToEdit, let person = specificPerson {
-            person.name = nameTextField.text ?? ""
-            person.birthday = birthdayDatePicker.date
-            person.identifier = specificPerson?.identifier
-            let image = personImage.image
-            if image != UIImage(named: "default") {
-                let imageData = image?.jpegData(compressionQuality: 1)
-                person.image = imageData
-            }
-            specificPerson = person
-            modifiyNotificationRequest(for: person)
+        // If an indexPath was passed in then we are editting the data of that specific person
+        // Otherwise we will create a new person and add it to Core Data
+        if let _ = indexPathToEdit {
+            modifySpecificPerson()
         } else {
-            let newPerson = Person(context: context)
-            newPerson.birthday = birthdayDatePicker.date
-            newPerson.name = nameTextField.text!
-            newPerson.identifier = UUID().uuidString
-            let image = personImage.image
-            if image != UIImage(named: "default") {
-                let imageData = image?.jpegData(compressionQuality: 1)
-                newPerson.image = imageData
-            }
-            context.insert(newPerson)
-            saveItems()
-            createNotificationRequest(for: newPerson)
+           createNewPerson()
         }
+        saveItems()
         navigationController?.popViewController(animated: true)
     }
 }

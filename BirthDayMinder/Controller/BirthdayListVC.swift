@@ -14,28 +14,42 @@ class BirthdayListVC: UITableViewController {
 
     // MARK: - IBOutlets
     @IBOutlet var birthdayTableView: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
     
     // MARK: - Variables
     var persons : [Person] = []
+    var filteredPersons : [Person] = []
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var indexPathToEdit : IndexPath?
+    
    
     // MARK: - View Life Cycles
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         getAllPersons()
+//        setUpSearchBar()
+        searchBar.delegate = self
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        birthdayTableView.delegate = self
-        birthdayTableView.dataSource = self
+        setupTableView()
+        
+        
     }
     
     // MARK: - Created Functions
-    public func getAllPersons() {
+    private func setupTableView() {
+        birthdayTableView.delegate = self
+        birthdayTableView.dataSource = self
+        birthdayTableView.rowHeight = 85
+    }
+    
+    // Fetch all the items in core data and assign it to the person's array
+    private func getAllPersons() {
         let request: NSFetchRequest<Person> = Person.fetchRequest()
         do {
             persons = try context.fetch(request)
+            filteredPersons = persons
         } catch let error as NSError {
             print("Error:", error.debugDescription)
         }
@@ -59,9 +73,12 @@ class BirthdayListVC: UITableViewController {
         // Calculate the number of days until their next birthday
         var isBirthdayToday = false;
         let daysUntilNextBirthday = calendar.dateComponents([.day], from: today, to: nextBirthDay).day!
+        let currentComponents = calendar.dateComponents([.day, .month], from: today)
+        let birthdayComponents = calendar.dateComponents([.day,.month], from: nextBirthDay)
         
-        if calendar.dateComponents([.day], from: today).day! - calendar.dateComponents([.day], from: nextBirthDay).day! == 0 {
+        if birthdayComponents.day! - currentComponents.day! == 0 && birthdayComponents.month! - currentComponents.month! == 0 {
             isBirthdayToday = true
+
         }
         // Get their upcoming age
         let upcomingAge = calendar.dateComponents([.year], from: birthday, to: nextBirthDay).year!
@@ -70,20 +87,26 @@ class BirthdayListVC: UITableViewController {
         return birthdayData
     }
     
+    // Deletes the person from core data, removes the notification request and deletes the rows
+    // from the table view
     private func deleteData(at indexPath: IndexPath) {
         birthdayTableView.deleteRows(at: [indexPath], with: .fade)
-        let person = persons[indexPath.row]
+        let person = filteredPersons[indexPath.row]
         removeNotificationRequest(for: person)
         context.delete(person)
         saveItems()
-        persons.remove(at: indexPath.row)
+        filteredPersons.remove(at: indexPath.row)
+        
     }
     
-    func saveItems(){
-        do {
-            try context.save()
-        } catch let error as NSError {
-            print("Error", error.debugDescription)
+    // Save any data if there have been any changes
+    private func saveItems(){
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                print("Could not save data")
+            }
         }
     }
     private func removeNotificationRequest(for person: Person) {
@@ -97,11 +120,12 @@ class BirthdayListVC: UITableViewController {
         
         if data.isBirthdayToday {
             text = "Turns \(data.upcomingAge - 1) Today"
+            
         
         } else if data.daysLeft == 1 {
             text = "Turning \(data.upcomingAge) Tomorrow"
         } else {
-            text = "Turning \(data.upcomingAge) in \(data.daysLeft) days"
+            text = "Turning \(data.upcomingAge)"
         }
         return text
     }
@@ -136,26 +160,30 @@ extension BirthdayListVC  {
             fatalError("The dequeued cell is not an instance of Birthday Cell")
         }
         cell.accessoryType = .disclosureIndicator
-        let person = persons[indexPath.row]
+        
+        let person = filteredPersons[indexPath.row]
         cell.personNameLbl.text = person.name
         cell.personNameLbl.adjustsFontSizeToFitWidth = true
         let birthdayData = timeUntilNextBirthday(from: person.birthday!)
         let daysLeft = birthdayData.daysLeft
         var text = ""
-        cell.personImage.image = UIImage(data: person.image!)
+        cell.personImage.image = UIImage(data: person.image ?? UIImage().jpegData(compressionQuality: 1)!)
         // Sets the text based on when the person's birthday is
-        // If daysLeft == 0 then their birthday is today
-        // if days left == 1 then their birthday is tomorrow
-        // if days left > 1 then it will show the number of days left until the person's birthday
         let birthYear = Calendar.current.dateComponents([.year], from: person.birthday!).year!
         let currentYear = Calendar.current.dateComponents([.year], from: Date()).year!
         
         // If person is born in the current year their upcoming age is 1
         // Configure the text of the upcoming age label otherwise
         if currentYear == birthYear {
-            text = "Turns 1 in \(daysLeft) days"
+            text = "Turning 1"
+            cell.daysLeftNumberLbl.text = String(daysLeft)
+            
+        }
+        else if birthdayData.isBirthdayToday {
             cell.daysLeftNumberLbl.text = "0"
-        } else {
+            text = configureCellText(from: birthdayData)
+        }
+        else {
             text = configureCellText(from: birthdayData)
             cell.daysLeftNumberLbl.text = String(daysLeft)
         }
@@ -166,17 +194,13 @@ extension BirthdayListVC  {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         indexPathToEdit = indexPath
-        let person = persons[indexPath.row]
+        let person = filteredPersons[indexPath.row]
         performSegue(withIdentifier: segueIdentifier, sender: person)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return persons.count
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 85
+        return filteredPersons.count
     }
     
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -190,6 +214,27 @@ extension BirthdayListVC  {
             deleteData(at: indexPath)
             tableView.endUpdates()
         }
+    }
+}
+
+extension BirthdayListVC: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+    }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+      filteredPersons = searchText.isEmpty ? persons : persons.filter({(person: Person) -> Bool in
+            // If dataItem matches the searchText, return true to include it
+        return person.name!.range(of: searchText, options: .caseInsensitive) != nil
+        })
+        birthdayTableView.reloadData()
+     
+    }
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+        searchBar.text = ""
+        getAllPersons()
     }
     
 }
